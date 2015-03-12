@@ -10,7 +10,7 @@
 
 <html>
 	<head>
-		<title>Sign Up</title>
+		<title>Log in</title>
 		<!-- <link rel="stylesheet" type="text/css" href="css/main.css" /> -->
 		<meta charset="utf-8">
 	</head>
@@ -28,16 +28,8 @@
 			</div>
 		</div> -->
 		
-		<form action="/signup" method="post" accept-charset="utf-8">
+		<form action="/login" method="post" accept-charset="utf-8">
 						<table>
-							<tr>
-								<td><label for="name">Name</label></td>
-								<td><input type="text" name="name" id="name" size="65" /></td>
-							</tr>
-							<tr>
-								<td><label for="domain">Domain</label></td>
-								<td><input type="url" name="domain" id="domain" size="65"/></td>
-							</tr>
 							<tr>
 								<td><label for="email">Email</label></td>
 								<td><input type="email" name="email" id="email" size="65" /></td>
@@ -47,15 +39,12 @@
 								<td><input type="password" name="password" id="password" size="65"/></td>
 							</tr>
 							<tr>
-								<td><label for="product">Product</label></td>
-								<td><input type="text" name="product" id="product" size="65" /></td>
-							</tr>
-							<tr>
 								<td colspan="2" align="right"><input type="submit"
-									value="Register" /></td>
+									value="Login" /></td>
 							</tr>
 						</table>
 					</form>
+					<a href="/signup">Sign Up!</a>
 					
 					
 		<!-- 

@@ -60,11 +60,20 @@ public class EmpresaDAOImpl implements EmpresaDAO {
 	@Override
 	public boolean correctLogin(String email, String password){
 		EntityManager em = EMFService.get().createEntityManager();
-		Query q = em.createQuery("select e from Empresa e where e.email = :email and e.password = :password");
-		q.setParameter("email", email);
-		q.setParameter("password", password);
+		Query q = em.createQuery("select e from Empresa e where e.email = :em and e.password = :pass");
+		q.setParameter("em", email);
+		q.setParameter("pass", password);
 		if(!q.getResultList().isEmpty()) return true;
 		return false;
+	}
+	
+	@Override
+	public Empresa getEnterprise(String email){
+		EntityManager em = EMFService.get().createEntityManager();
+		Query q = em.createQuery("select e from Empresa e where e.email = :em");
+		q.setParameter("em", email);
+		Empresa e = (Empresa) q.getResultList().get(0);
+		return e;
 	}
 
 }
