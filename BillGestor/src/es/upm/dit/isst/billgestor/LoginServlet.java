@@ -33,7 +33,7 @@ public class LoginServlet extends HttpServlet {
 		String password = checkNull(req.getParameter("password"));
 		EmpresaDAO dao = EmpresaDAOImpl.getInstance();
 		if(dao.correctLogin(email, password)){
-			resp.sendRedirect("/dashboard");
+			resp.sendRedirect("/dashboard?email=" + email);
 		}else{
 			resp.sendRedirect("/login");
 		}
