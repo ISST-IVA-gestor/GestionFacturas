@@ -34,7 +34,11 @@ nav.menu > ul > li > a {
   text-decoration: none;
 }
 
-  nav.menu > ul > li > a:hover {
+  nav.menu > ul > li > a:hover{
+    background-color: #77a198; 
+    cursor: pointer;
+  }
+  nav.menu > ul > li.active >a {
     background-color: #77a198; 
     cursor: pointer;
   }
@@ -46,7 +50,12 @@ nav.menu > ul > li > a {
   float:left;
   }
    .article2{
-   float:right;
+   overflow:hidden;
+   
   }
    .article3{
+   overflow:hidden;
+  }
+  #chart_div{
+  margin-left: 25%;
   }

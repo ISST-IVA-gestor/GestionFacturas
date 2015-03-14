@@ -23,7 +23,7 @@ public class DashboardServlet extends HttpServlet {
 		String name = e.getName();
 		String domain =e.getDomain();
 		String product =e.getProduct();
-		String plan = e.getPlan().toString();
+		String plan = e.getPlan().name();
 		int nreq= e.getRemainingRequest();
 		
 		req.getSession().setAttribute("name", name);
