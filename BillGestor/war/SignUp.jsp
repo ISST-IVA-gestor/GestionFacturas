@@ -10,115 +10,62 @@
 
 <html>
 	<head>
-		<title>Sign Up</title>
-		<!-- <link rel="stylesheet" type="text/css" href="css/main.css" /> -->
 		<meta charset="utf-8">
+		<title>Sign up </title>
+		<link rel="stylesheet" type="text/css" href="css/signup.css" />	
 	</head>
 	<body>
-	<!-- 
-		<div style="width: 100%;">
-			<div class="line"></div>
-			<div class="topLine">
-				<div style="float: left;" class="headline">Empresa</div>
-				<div style="float: right;">
-					<a
-						href="<c:url value="${url}"/>"><c:out value="${urlLinktext}"/></a>
-					<c:if test="${empresa != null}"><c:out value="${empresa.name}"/></c:if>
-				</div>
-			</div>
-		</div> -->
+		<header class="primary-header container group">
+	        <div class="logo-box">
+	        	<img src="images/logo.png" class="logo">
+	      	</div>
+
+	        <h3 class="tagline">Electronic Invoice Management</h3>
+    	</header>
+    	<section class="row-alt">
+    	</section>
+    	<section class="row">
+	        <div class="lead container">
+
+		        <form class="col" action="/signup" method="post" accept-charset="utf-8">
+		        	<fieldset class="register-group">
+
+			            <label for="name"> Enterprise name</label>
+			            <input input type="text" name="name" id="name" required>
+			            
+			            <label for="domain"> Website </label>
+			            <input type="url" name="domain" id="domain" required>
+			           
+			            <label for="email"> Email </label>
+			            <input type="email" name="email" id="email" required>
+			            
+			            <label for="password"> Password </label>
+			            <input type="password" name="password" id="password" required>
+			            
+			            <label for="product"> Product offered </label>
+			            <select type="text" name="product" id="product" required>
+			              	<option value="1" selected>APIs</option>
+			                <option value="2">Electronic books</option>
+			                <option value="3">Multimedia</option>
+			                <option value="4">Online courses</option>
+			                <option value="5">Online file sharing services</option>
+			                <option value="6">Software</option>
+			                <option value="7">Streaming services</option>
+			                <option value="8">Other</option>
+			            </select>
+
+			        </fieldset>
+			        <input type="submit" class="btn btn-default" value="SUBMIT" />
+				</form>
+
+	        </div>
+    	</section>	
+		<footer class="primary-footer container group">
+
+      		<h3>G. E. E. F. T.</h3><h4>All rights reserved &copy;</h4>
+      
+    	</footer>
 		
-		<form action="/signup" method="post" accept-charset="utf-8">
-						<table>
-							<tr>
-								<td><label for="name">Name</label></td>
-								<td><input type="text" name="name" id="name" size="65" /></td>
-							</tr>
-							<tr>
-								<td><label for="domain">Domain</label></td>
-								<td><input type="url" name="domain" id="domain" size="65"/></td>
-							</tr>
-							<tr>
-								<td><label for="email">Email</label></td>
-								<td><input type="email" name="email" id="email" size="65" /></td>
-							</tr>
-							<tr>
-								<td><label for="password">Password</label></td>
-								<td><input type="password" name="password" id="password" size="65"/></td>
-							</tr>
-							<tr>
-								<td><label for="product">Product</label></td>
-								<td><input type="text" name="product" id="product" size="65" /></td>
-							</tr>
-							<tr>
-								<td colspan="2" align="right"><input type="submit"
-									value="Register" /></td>
-							</tr>
-						</table>
-					</form>
-					
-					
-		<!-- 
-		<div style="clear: both;" />
-		You have a total number of <c:out value="${fn:length(todos)}" />
-		Todos.
-	
-		<table>
-			<tr>
-				<th>Short description</th>
-				<th>Long Description</th>
-				<th>URL</th>
-				<th>Done</th>
-			</tr>
-	
-			<c:forEach items="${todos}" var="todo">
-				<tr>
-					<td><c:out value="${todo.shortDescription}" /></td>
-					<td><c:out value="${todo.longDescription}" /></td>
-					<td><c:out value="${todo.url}" /></td>
-					<td><a class="done"
-						href="<c:url value="/done?id=${todo.id}" />">Done</a></td>
-				</tr>
-			</c:forEach>
-		</table>
-	
-	
-		<hr />
-	
-		<div class="main">
-	
-			<div class="headline">New todo</div>
-	
-			<c:choose>
-				<c:when test="${user != null}">
-					<form action="/new" method="post" accept-charset="utf-8">
-						<table>
-							<tr>
-								<td><label for="summary">Summary</label></td>
-								<td><input type="text" name="summary" id="summary" size="65" /></td>
-							</tr>
-							<tr>
-								<td valign="description"><label for="description">Description</label></td>
-								<td><textarea rows="4" cols="50" name="description"
-										id="description"></textarea></td>
-							</tr>
-							<tr>
-								<td valign="top"><label for="url">URL</label></td>
-								<td><input type="url" name="url" id="url" size="65" /></td>
-							</tr>
-							<tr>
-								<td colspan="2" align="right"><input type="submit"
-									value="Create" /></td>
-							</tr>
-						</table>
-					</form>
-				</c:when>
-				<c:otherwise>
-	
-	Please login with your Google account
-				</c:otherwise>
-			</c:choose>
-		</div>
-		-->
+
 	</body>
 </html>
