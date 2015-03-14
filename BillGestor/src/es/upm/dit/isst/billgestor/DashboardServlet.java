@@ -21,7 +21,16 @@ public class DashboardServlet extends HttpServlet {
 		EmpresaDAO dao = EmpresaDAOImpl.getInstance();
 		Empresa e = dao.getEnterprise(email);
 		String name = e.getName();
+		String domain =e.getDomain();
+		String product =e.getProduct();
+		String plan = e.getPlan().toString();
+		int nreq= e.getRemainingRequest();
+		
 		req.getSession().setAttribute("name", name);
+		req.getSession().setAttribute("domain", domain);
+		req.getSession().setAttribute("product", product);
+		req.getSession().setAttribute("plan", plan);
+		req.getSession().setAttribute("nreq", nreq);
 		RequestDispatcher view = req.getRequestDispatcher("Dashboard.jsp");
 		try {
 			view.forward(req, resp);
