@@ -42,7 +42,7 @@
 
 	        <h1>Solve your invoice troubles!</h1>
 
-	        <p>If you are a digital enterprise and you wish to forget the specific taxs of each European Union country... We are glad to solve your problems. Join us and start using our service for free.</p>
+	        <p>If you are a digital enterprise and you wish to forget the specific taxes of each European Union country... We are glad to solve your problems. Join us and start using our service for free.</p>
 
 	        <input class="btn btn-default" onClick="location.href = '/signup'" type="submit" name="submit" value="Sign up">
 
@@ -50,7 +50,7 @@
     </section>	
 	<footer class="primary-footer container group">
 
-      <h3>G. E. E. T. F.</h3><h4>All rights reserved &copy;</h4>
+      <h3>G. E. E. F. T.</h3><h4>All rights reserved &copy;</h4>
       
     </footer>
 	</body>

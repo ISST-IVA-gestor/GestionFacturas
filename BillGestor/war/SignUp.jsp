@@ -44,14 +44,14 @@
 			            
 			            <label for="product"> Product offered </label>
 			            <select type="text" name="product" id="product" required>
-			              	<option value="1" selected>APIs</option>
-			                <option value="2">Electronic books</option>
-			                <option value="3">Multimedia</option>
-			                <option value="4">Online courses</option>
-			                <option value="5">Online file sharing services</option>
-			                <option value="6">Software</option>
-			                <option value="7">Streaming services</option>
-			                <option value="8">Other</option>
+			              	<option value="APIs" selected>APIs</option>
+			                <option value="Electronic books">Electronic books</option>
+			                <option value="Multimedia">Multimedia</option>
+			                <option value="Online courses">Online courses</option>
+			                <option value="Online file sharing services">Online file sharing services</option>
+			                <option value="Software">Software</option>
+			                <option value="Streaming services">Streaming services</option>
+			                <option value="Other">Other</option>
 			            </select>
 
 			        </fieldset>
