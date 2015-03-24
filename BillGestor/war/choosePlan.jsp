@@ -12,8 +12,6 @@
 	<head>
 		<title>Dashboard</title>
 		<link rel="stylesheet" type="text/css" href="css/main.css" />
-		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
-   		<script type="text/javascript" src="/js/chart.js"></script>
 		<meta charset="utf-8">
 	</head>
 	<body>				
@@ -31,7 +29,7 @@
 		<nav class="menu">
 		<ul>
 			<li class="active"><a href="" >DashBoard</a></li>
-			<li><a href="choosePlan.jsp">Choose Plan</a></li>
+			<li><a href="">Choose Plan</a></li>
 			<li><a href="">Reports</a></li>
 			<li><a href="">Configuration</a></li>
 			<li><a href="">FAQ</a></li>
@@ -40,19 +38,15 @@
 		<section class="row">
 	        <div class="lead container">
 			<article class="article1">
-				<h4>Client Information</h4>
-				<p>Name: <c:out value="${name}" /></p>
-				<p>Domain: <c:out value="${domain}" /></p>
-				<p>Product: <c:out value="${product}" /></p>
-				<p>Plan: <c:out value="${plan}" /></p>
-				<p>Requests Remaining: <span id="nreq"><c:out value="${nreq}" /></span></p>
-			</article>
-			<article class="article2">
-				<h4>Reports Chart</h4>
-			</article>			
-			<article class="article3">
-				<h4>Requests Remaining Chart</h4>
-				<div id="chart_div"></div>
+				<form class="col" action="" method="post" accept-charset="utf-8">
+					<input type="submit" name="startup" id="startup" value="STARTUP">
+				</form>
+				<form class="col" action="" method="post" accept-charset="utf-8">
+					<input type="submit" name="premium" id="premium" value="PREMIUM">
+				</form>
+				<form class="col" action="" method="post" accept-charset="utf-8">
+					<input type="submit" name="gold" id="gold" value="GOLD">
+				</form>
 			</article>
 			</div>
 		</section>

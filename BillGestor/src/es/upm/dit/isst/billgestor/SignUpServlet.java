@@ -45,7 +45,7 @@ public class SignUpServlet extends HttpServlet {
 		String product = checkNull(req.getParameter("product"));
 		EmpresaDAO dao = EmpresaDAOImpl.getInstance();
 		dao.add(name, email, domain, password, product);
-		resp.sendRedirect("/login");
+		resp.sendRedirect("/");
 		
 	}
 

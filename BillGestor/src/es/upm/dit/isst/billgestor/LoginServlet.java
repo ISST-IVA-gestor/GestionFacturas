@@ -35,7 +35,7 @@ public class LoginServlet extends HttpServlet {
 		if(dao.correctLogin(email, password)){
 			resp.sendRedirect("/dashboard?email=" + email);
 		}else{
-			resp.sendRedirect("/login");
+			resp.sendRedirect("/");
 		}
 		
 		
