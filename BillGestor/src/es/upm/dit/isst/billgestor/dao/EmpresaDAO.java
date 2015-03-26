@@ -1,4 +1,4 @@
-package es.upm.dit.iist.billgestor.dao;
+package es.upm.dit.isst.billgestor.dao;
 
 import es.upm.dit.isst.billgestor.model.Empresa;
 

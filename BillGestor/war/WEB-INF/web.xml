@@ -20,6 +20,10 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<servlet-name>SignUp</servlet-name>
 		<servlet-class>es.upm.dit.isst.billgestor.SignUpServlet</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>ChoosePlan</servlet-name>
+		<servlet-class>es.upm.dit.isst.billgestor.ChoosePlanServlet</servlet-class>
+	</servlet>
 	<servlet-mapping>
 		<servlet-name>BillGestor</servlet-name>
 		<url-pattern>/billgestor</url-pattern>
@@ -31,6 +35,10 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	<servlet-mapping>
 		<servlet-name>Dashboard</servlet-name>
 		<url-pattern>/dashboard</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ChoosePlan</servlet-name>
+		<url-pattern>/chooseplan</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>Login</servlet-name>

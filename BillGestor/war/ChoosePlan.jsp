@@ -28,11 +28,12 @@
 		<div class="content">
 		<nav class="menu">
 		<ul>
-			<li class="active"><a href="" >DashBoard</a></li>
-			<li><a href="">Choose Plan</a></li>
+			<li><a href="/dashboard" >DashBoard</a></li>
+			<li class="active"><a href="">Choose Plan</a></li>
 			<li><a href="">Reports</a></li>
 			<li><a href="">Configuration</a></li>
 			<li><a href="">FAQ</a></li>
+			<li><a href="?logout=yes">Log Out</a></li>
 		</ul>
 		</nav>
 		<section class="row">

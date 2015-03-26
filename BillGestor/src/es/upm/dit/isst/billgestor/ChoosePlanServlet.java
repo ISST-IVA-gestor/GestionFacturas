@@ -11,14 +11,12 @@ import javax.servlet.http.HttpSession;
 
 import es.upm.dit.isst.billgestor.dao.EmpresaDAO;
 import es.upm.dit.isst.billgestor.dao.EmpresaDAOImpl;
-import es.upm.dit.isst.billgestor.model.Empresa;
 
 
-public class DashboardServlet extends HttpServlet {
+public class ChoosePlanServlet extends HttpServlet {
 
 	public void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException {
-		
 		HttpSession session = req.getSession();
 		
 		String logout = checkNull(req.getParameter("logout"));
@@ -39,27 +37,21 @@ public class DashboardServlet extends HttpServlet {
 			return;
 		}
 		
-		String email = session.getAttribute("user").toString();
-		EmpresaDAO dao = EmpresaDAOImpl.getInstance();
-		Empresa e = dao.getEnterprise(email);
-		String name = e.getName();
-		String domain =e.getDomain();
-		String product =e.getProduct();
-		String plan = e.getPlan().name();
-		int nreq= e.getRemainingRequest();
-		
-		req.getSession().setAttribute("name", name);
-		req.getSession().setAttribute("domain", domain);
-		req.getSession().setAttribute("product", product);
-		req.getSession().setAttribute("plan", plan);
-		req.getSession().setAttribute("nreq", nreq);
-		RequestDispatcher view = req.getRequestDispatcher("Dashboard.jsp");
+		RequestDispatcher view = req.getRequestDispatcher("ChoosePlan.jsp");
 		try {
 			view.forward(req, resp);
 		} catch (ServletException ex) {
 			// TODO Auto-generated catch block
 			ex.printStackTrace();
 		}
+	}
+	
+	public void doPost(HttpServletRequest req, HttpServletResponse resp)
+			throws IOException {
+		
+		
+		
+		
 	}
 
 	private String checkNull(String s) {

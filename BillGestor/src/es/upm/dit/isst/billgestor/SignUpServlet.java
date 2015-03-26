@@ -14,8 +14,8 @@ import com.google.appengine.api.users.User;
 import com.google.appengine.api.users.UserService;
 import com.google.appengine.api.users.UserServiceFactory;
 
-import es.upm.dit.iist.billgestor.dao.EmpresaDAO;
-import es.upm.dit.iist.billgestor.dao.EmpresaDAOImpl;
+import es.upm.dit.isst.billgestor.dao.EmpresaDAO;
+import es.upm.dit.isst.billgestor.dao.EmpresaDAOImpl;
 import es.upm.dit.isst.billgestor.model.Empresa;
 
 public class SignUpServlet extends HttpServlet {

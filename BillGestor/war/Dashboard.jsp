@@ -31,7 +31,7 @@
 		<nav class="menu">
 		<ul>
 			<li class="active"><a href="" >DashBoard</a></li>
-			<li><a href="choosePlan.jsp">Choose Plan</a></li>
+			<li><a href="/chooseplan">Choose Plan</a></li>
 			<li><a href="">Reports</a></li>
 			<li><a href="">Configuration</a></li>
 			<li><a href="">FAQ</a></li>

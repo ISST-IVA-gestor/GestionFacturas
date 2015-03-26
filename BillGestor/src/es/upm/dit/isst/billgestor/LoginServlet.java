@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import es.upm.dit.iist.billgestor.dao.EmpresaDAO;
-import es.upm.dit.iist.billgestor.dao.EmpresaDAOImpl;
+import es.upm.dit.isst.billgestor.dao.EmpresaDAO;
+import es.upm.dit.isst.billgestor.dao.EmpresaDAOImpl;
 
 public class LoginServlet extends HttpServlet {
 	
@@ -35,7 +35,7 @@ public class LoginServlet extends HttpServlet {
 		EmpresaDAO dao = EmpresaDAOImpl.getInstance();
 		if(dao.correctLogin(email, password)){
 			session.setAttribute("user", email);
-			resp.sendRedirect("/dashboard?email=" + email);
+			resp.sendRedirect("/dashboard");
 		}else{
 			resp.sendRedirect("/");
 		}
