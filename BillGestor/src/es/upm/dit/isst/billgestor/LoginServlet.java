@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import es.upm.dit.iist.billgestor.dao.EmpresaDAO;
 import es.upm.dit.iist.billgestor.dao.EmpresaDAOImpl;
@@ -28,11 +29,12 @@ public class LoginServlet extends HttpServlet {
 	public void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException {
 		
-		
+		HttpSession session = req.getSession();
 		String email = checkNull(req.getParameter("email"));
 		String password = checkNull(req.getParameter("password"));
 		EmpresaDAO dao = EmpresaDAOImpl.getInstance();
 		if(dao.correctLogin(email, password)){
+			session.setAttribute("user", email);
 			resp.sendRedirect("/dashboard?email=" + email);
 		}else{
 			resp.sendRedirect("/");

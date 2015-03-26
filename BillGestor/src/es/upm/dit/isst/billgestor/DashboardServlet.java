@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import es.upm.dit.iist.billgestor.dao.EmpresaDAO;
 import es.upm.dit.iist.billgestor.dao.EmpresaDAOImpl;
@@ -17,7 +18,33 @@ public class DashboardServlet extends HttpServlet {
 
 	public void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException {
+		HttpSession session = req.getSession();
+		
 		String email = checkNull(req.getParameter("email"));
+		String logout = checkNull(req.getParameter("logout"));
+		
+		/*
+		 * Compruebo si se ha llamado al logout
+		 */
+		if(logout.equals("yes")){
+			session.invalidate();
+			resp.sendRedirect("/");
+			return;
+		}
+		/*
+		 * Compruebo si existe sesión.
+		 */
+		if(session.getAttribute("user") == null ){
+			resp.sendRedirect("/");
+			return;
+		}
+		
+		// Si existe, compruebo si es igual al correo enviado al hacer login.
+		if(!session.getAttribute("user").toString().equalsIgnoreCase(email)){
+			   //redirijo al login
+			resp.sendRedirect("/");
+			return;
+		}
 		EmpresaDAO dao = EmpresaDAOImpl.getInstance();
 		Empresa e = dao.getEnterprise(email);
 		String name = e.getName();

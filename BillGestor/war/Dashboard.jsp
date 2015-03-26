@@ -35,6 +35,7 @@
 			<li><a href="">Reports</a></li>
 			<li><a href="">Configuration</a></li>
 			<li><a href="">FAQ</a></li>
+			<li><a href="?logout=yes">Log Out</a></li>
 		</ul>
 		</nav>
 		<section class="row">
