@@ -61,8 +61,8 @@ public class ConfigurationServlet extends HttpServlet {
 				EmpresaDAO dao = EmpresaDAOImpl.getInstance();
 				Empresa e = dao.getEnterprise(email);
 				dao.remove(e.getId());
-				resp.sendRedirect("/");
 				session.invalidate();
+				resp.sendRedirect("/");
 			}
 		
 		

@@ -10,7 +10,7 @@
 
 <html>
 	<head>
-		<title>Dashboard</title>
+		<title>Choose Plan</title>
 		<link rel="stylesheet" type="text/css" href="css/main.css" />
 		<meta charset="utf-8">
 	</head>
@@ -26,23 +26,31 @@
     	<section class="row-alt">
     	</section>
 		<div class="content">
-		<nav class="menu">
-		<ul>
-			<li><a href="/dashboard" >DashBoard</a></li>
-			<li class="active"><a href="">Choose Plan</a></li>
-			<li><a href="">Reports</a></li>
-			<li><a href="">Configuration</a></li>
-			<li><a href="">FAQ</a></li>
-			<li><a href="?logout=yes">Log Out</a></li>
-		</ul>
-		</nav>
-		<section class="row">
-	        <div class="lead container">
-			<article class="article1">
-				<form class="col" action="" method="post" accept-charset="utf-8">
-					<input type="submit" name="delete" id="startup" value="DELETE">
-				</form>
-			</article>
+			<section class="row-nav">
+			<nav class="menu">
+			<ul>
+				<li><a href="/dashboard" >DashBoard</a></li>
+				<li><a href="/chooseplan">Choose Plan</a></li>
+				<li><a href="">Reports</a></li>
+				<li class="active"><a href="">Configuration</a></li>
+				<li><a href="">FAQ</a></li>
+				<li><a href="?logout=yes">Log Out</a></li>
+			</ul>
+			</nav>
+		 </section>
+		<section class="row-main">
+	  <!--      <div class="lead container"> -->
+	        	<h1> Pricing plans </h1></br>
+	        	<h4> Please, select the best plan for you! </h4>
+	        	<div class="table-plan">
+				<section class="col-1-3">
+					<table class="plan">
+						<tr class="button-cell"><td><form action="" method="post" accept-charset="utf-8">
+								<input class="btn-table" type="submit" name="delete" id="startup" value="DELETE">
+					</form><td></tr>
+					</table>	
+				</section>
+			<!--	</div> -->
 			</div>
 		</section>
 		</div>
@@ -50,4 +58,4 @@
 
       		<h3>G. E. E. F. T.</h3><h4>All rights reserved &copy;</h4>
       
-    	</footer>		
+    	</footer>			
