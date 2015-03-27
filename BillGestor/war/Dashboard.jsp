@@ -28,6 +28,7 @@
     	<section class="row-alt">
     	</section>
 		<div class="content">
+		<section class="row-nav">
 		<nav class="menu">
 		<ul>
 			<li class="active"><a href="" >DashBoard</a></li>
@@ -38,7 +39,8 @@
 			<li><a href="?logout=yes">Log Out</a></li>
 		</ul>
 		</nav>
-		<section class="row">
+		</section>
+		<section class="row-main">
 	        <div class="lead container">
 			<article class="article1">
 				<h4>Client Information</h4>

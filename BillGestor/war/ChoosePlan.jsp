@@ -26,29 +26,53 @@
     	<section class="row-alt">
     	</section>
 		<div class="content">
-		<nav class="menu">
-		<ul>
-			<li><a href="/dashboard" >DashBoard</a></li>
-			<li class="active"><a href="">Choose Plan</a></li>
-			<li><a href="">Reports</a></li>
-			<li><a href="">Configuration</a></li>
-			<li><a href="">FAQ</a></li>
-			<li><a href="?logout=yes">Log Out</a></li>
-		</ul>
-		</nav>
-		<section class="row">
-	        <div class="lead container">
-			<article class="article1">
-				<form class="col" action="" method="post" accept-charset="utf-8">
-					<input type="submit" name="startup" id="startup" value="STARTUP">
-				</form>
-				<form class="col" action="" method="post" accept-charset="utf-8">
-					<input type="submit" name="premium" id="premium" value="PREMIUM">
-				</form>
-				<form class="col" action="" method="post" accept-charset="utf-8">
-					<input type="submit" name="gold" id="gold" value="GOLD">
-				</form>
-			</article>
+			<section class="row-nav">
+			<nav class="menu">
+			<ul>
+				<li><a href="" >DashBoard</a></li>
+				<li class="active"><a href="">Choose Plan</a></li>
+				<li><a href="">Reports</a></li>
+				<li><a href="">Configuration</a></li>
+				<li><a href="">FAQ</a></li>
+			</ul>
+			</nav>
+		 </section>
+		<section class="row-main">
+	  <!--      <div class="lead container"> -->
+	        	<h1> Pricing plans </h1></br>
+	        	<h4> Please, select the best plan for you! </h4>
+	        	<div class="table-plan">
+				<section class="col-1-3">
+					<table class="plan">
+						<tr class="first-cell"><td>STARTUP</td></tr>
+						<tr class="request-cell"><td>100 requests</td></tr>
+						<tr class="price-cell"><td>9,95 €</td></tr>
+						<tr class="button-cell"><td><form action="" method="post" accept-charset="utf-8">
+								<input class="btn-table" type="submit" name="startup" id="startup" value="BUY NOW">
+					</form><td></tr>
+					</table>	
+				</section>
+				<section class="col-1-3">
+					<table class="plan">
+						<tr class="first-cell"><td>PREMIUM</td></tr>
+						<tr class="request-cell"><td>1.000 requests</td></tr>
+						<tr class="price-cell"><td>59,95 €</td></tr>
+						<tr class="button-cell"><td><form action="" method="post" accept-charset="utf-8">
+								<input class="btn-table" type="submit" name="startup" id="startup" value="BUY NOW">
+					</form><td></tr>
+					</table>
+				</section>
+				<section class="col-1-3">
+					<table class="plan">
+						<tr class="first-cell"><td>GOLD</td></tr>
+						<tr class="request-cell"><td>10.000 requests</td></tr>
+						<tr class="price-cell"><td>299,95 €</td></tr>
+						<tr class="button-cell"><td><form action="" method="post" accept-charset="utf-8">
+								<input class="btn-table" type="submit" name="startup" id="startup" value="BUY NOW">
+					</form><td></tr>
+					</table>
+				</section>
+			<!--	</div> -->
 			</div>
 		</section>
 		</div>
@@ -56,4 +80,4 @@
 
       		<h3>G. E. E. F. T.</h3><h4>All rights reserved &copy;</h4>
       
-    	</footer>		
+    	</footer>			
