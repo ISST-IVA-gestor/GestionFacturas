@@ -75,5 +75,21 @@ public class EmpresaDAOImpl implements EmpresaDAO {
 		Empresa e = (Empresa) q.getResultList().get(0);
 		return e;
 	}
+	
+	public void increaseRequests(int newRequests, String email){
+		EntityManager em = EMFService.get().createEntityManager();
+		Query q = em.createQuery("select e from Empresa e where e.email = :em");
+		q.setParameter("em", email);
+		Empresa e = (Empresa) q.getResultList().get(0);	
+		em.getTransaction().begin();
+		e.setRemainingRequest(e.getRemainingRequest() + newRequests);
+		em.getTransaction().commit();
+		
+	}
+	
+	public void decreaseOneRequest(String domain){
+		
+	}
+
 
 }

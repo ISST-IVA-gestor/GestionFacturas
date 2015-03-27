@@ -16,6 +16,10 @@ public interface EmpresaDAO {
 	
 	public boolean areEnoughRequestLeft(String domain);
 	
+	public void increaseRequests(int newRequests, String domain);
+	
+	public void decreaseOneRequest(String domain);
+	
 	public boolean correctLogin(String email, String password);
 	// public List<String> getUsers();
 

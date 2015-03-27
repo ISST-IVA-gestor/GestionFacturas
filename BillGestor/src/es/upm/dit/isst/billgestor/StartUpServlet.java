@@ -11,60 +11,39 @@ import javax.servlet.http.HttpSession;
 
 import es.upm.dit.isst.billgestor.dao.EmpresaDAO;
 import es.upm.dit.isst.billgestor.dao.EmpresaDAOImpl;
-import es.upm.dit.isst.billgestor.model.Empresa;
 
 
-public class ChoosePlanServlet extends HttpServlet {
 
+public class StartUpServlet extends HttpServlet {
 	public void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException {
+		RequestDispatcher view = req.getRequestDispatcher("ChoosePlan.jsp");
 		HttpSession session = req.getSession();
 		String email = session.getAttribute("user").toString();
-	
-		EmpresaDAO dao = EmpresaDAOImpl.getInstance();
-		Empresa e = dao.getEnterprise(email);
-		
-		int nreq= e.getRemainingRequest();
-		
-		req.getSession().setAttribute("nreq", nreq);
-		
-		String logout = checkNull(req.getParameter("logout"));
-		
-		/*
-		 * Compruebo si se ha llamado al logout
-		 */
-		if(logout.equals("yes")){
-			session.invalidate();
-			resp.sendRedirect("/");
-			return;
-		}
-		/*
-		 * Compruebo si existe sesión.
-		 */
-		if(session.getAttribute("user") == null ){
-			resp.sendRedirect("/");
-			return;
-		}
-		//String email = session.getAttribute("user").toString();
 		req.getSession().setAttribute("email", email);
-		
-		RequestDispatcher view = req.getRequestDispatcher("ChoosePlan.jsp");
 		try {
 			view.forward(req, resp);
-		} catch (ServletException ex) {
+		} catch (ServletException e) {
 			// TODO Auto-generated catch block
-			ex.printStackTrace();
+			e.printStackTrace();
 		}
+	
 	}
 	
 	public void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException {
 		
-		
-		
+		EmpresaDAO dao = EmpresaDAOImpl.getInstance();
+		HttpSession session = req.getSession();
+		String email = session.getAttribute("user").toString();
+		dao.increaseRequests(100, email);
+		req.getSession().setAttribute("email", email);
+		resp.sendRedirect("/chooseplan");
 		
 	}
-
+	
+	
+	
 	private String checkNull(String s) {
 		if (s == null) {
 			return "";
