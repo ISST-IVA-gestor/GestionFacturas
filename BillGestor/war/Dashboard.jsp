@@ -22,8 +22,11 @@
 	        <div class="logo-box">
 	        	<img src="images/logo.png" class="logo">
 	      	</div>
-
-	        <h3 class="tagline">Electronic Invoice Management</h3>
+	      	<div class="logout-contanier">
+	        	<h3>Electronic Invoice Management</h3>
+	            <a href="?logout=yes" class="logout-text">Log out</a>
+	        	<img src="images/logout.png" class="logout">
+	        </div>
     	</header>
     	<section class="row-alt">
     	</section>
@@ -36,15 +39,14 @@
 			<li><a href="">Reports</a></li>
 			<li><a href="/configuration">Configuration</a></li>
 			<li><a href="">FAQ</a></li>
-			<li><a href="?logout=yes">Log Out</a></li>
 		</ul>
 		</nav>
 		</section>
 		<section class="row-main">
 	        <div class="lead container">
 			<article class="article1">
-				<h4>Client Information</h4>
-				<p>Name: <c:out value="${name}" /></p>
+				 <h2> Welcome, <c:out value="${name}"/>!</h2></br>
+	        	 <h4> Check out current information about your account.</h4></br>
 				<p>Domain: <c:out value="${domain}" /></p>
 				<p>Product: <c:out value="${product}" /></p>
 				<p>Plan: <c:out value="${plan}" /></p>

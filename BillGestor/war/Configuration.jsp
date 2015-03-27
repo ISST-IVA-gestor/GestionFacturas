@@ -20,8 +20,11 @@
 	        <div class="logo-box">
 	        	<img src="images/logo.png" class="logo">
 	      	</div>
-
-	        <h3 class="tagline">Electronic Invoice Management</h3>
+	      	<div class="logout-contanier">
+	        	<h3>Electronic Invoice Management</h3>
+	            <a href="?logout=yes" class="logout-text">Log out</a>
+	        	<img src="images/logout.png" class="logout">
+	        </div>
     	</header>
     	<section class="row-alt">
     	</section>
@@ -34,7 +37,6 @@
 				<li><a href="">Reports</a></li>
 				<li class="active"><a href="">Configuration</a></li>
 				<li><a href="">FAQ</a></li>
-				<li><a href="?logout=yes">Log Out</a></li>
 			</ul>
 			</nav>
 		 </section>
