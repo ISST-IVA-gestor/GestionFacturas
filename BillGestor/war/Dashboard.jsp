@@ -33,7 +33,7 @@
 			<li class="active"><a href="" >DashBoard</a></li>
 			<li><a href="/chooseplan">Choose Plan</a></li>
 			<li><a href="">Reports</a></li>
-			<li><a href="">Configuration</a></li>
+			<li><a href="/configuration">Configuration</a></li>
 			<li><a href="">FAQ</a></li>
 			<li><a href="?logout=yes">Log Out</a></li>
 		</ul>

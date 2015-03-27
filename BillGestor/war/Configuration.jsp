@@ -10,7 +10,7 @@
 
 <html>
 	<head>
-		<title>Choose Plan</title>
+		<title>Dashboard</title>
 		<link rel="stylesheet" type="text/css" href="css/main.css" />
 		<meta charset="utf-8">
 	</head>
@@ -40,13 +40,7 @@
 	        <div class="lead container">
 			<article class="article1">
 				<form class="col" action="" method="post" accept-charset="utf-8">
-					<input type="submit" name="startup" id="startup" value="STARTUP">
-				</form>
-				<form class="col" action="" method="post" accept-charset="utf-8">
-					<input type="submit" name="premium" id="premium" value="PREMIUM">
-				</form>
-				<form class="col" action="" method="post" accept-charset="utf-8">
-					<input type="submit" name="gold" id="gold" value="GOLD">
+					<input type="submit" name="delete" id="startup" value="DELETE">
 				</form>
 			</article>
 			</div>

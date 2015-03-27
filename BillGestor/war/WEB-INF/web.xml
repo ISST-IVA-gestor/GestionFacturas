@@ -24,6 +24,14 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<servlet-name>ChoosePlan</servlet-name>
 		<servlet-class>es.upm.dit.isst.billgestor.ChoosePlanServlet</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>Configuration</servlet-name>
+		<servlet-class>es.upm.dit.isst.billgestor.ConfigurationServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Configuration</servlet-name>
+		<url-pattern>/configuration</url-pattern>
+	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>BillGestor</servlet-name>
 		<url-pattern>/billgestor</url-pattern>
