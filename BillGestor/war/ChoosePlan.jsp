@@ -29,8 +29,8 @@
 			<section class="row-nav">
 			<nav class="menu">
 			<ul>
-				<li><a href="" >DashBoard</a></li>
-				<li class="active"><a href="">Choose Plan</a></li>
+				<li><a href="/dashboard" >DashBoard</a></li>
+				<li class="active" href="/chooseplan"><a href="">Choose Plan</a></li>
 				<li><a href="">Reports</a></li>
 				<li><a href="/configuration">Configuration</a></li>
 				<li><a href="">FAQ</a></li>

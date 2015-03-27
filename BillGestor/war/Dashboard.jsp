@@ -31,7 +31,7 @@
 		<section class="row-nav">
 		<nav class="menu">
 		<ul>
-			<li class="active"><a href="" >DashBoard</a></li>
+			<li class="active" href="/dashboard"><a href="" >DashBoard</a></li>
 			<li><a href="/chooseplan">Choose Plan</a></li>
 			<li><a href="">Reports</a></li>
 			<li><a href="/configuration">Configuration</a></li>
@@ -49,6 +49,9 @@
 				<p>Product: <c:out value="${product}" /></p>
 				<p>Plan: <c:out value="${plan}" /></p>
 				<p>Requests Remaining: <span id="nreq"><c:out value="${nreq}" /></span></p>
+				<form action="/mail" method="post">
+					<input type="submit" value="Email to Toño, Sergio y Empresa"></button>
+				</form>			
 			</article>
 			<article class="article2">
 				<h4>Reports Chart</h4>
