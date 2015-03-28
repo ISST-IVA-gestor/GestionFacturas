@@ -1,16 +1,20 @@
  package es.upm.dit.isst.billgestor.model;
 import java.util.Date;
 import java.util.Properties;
- 
+import javax.mail.Multipart;
+import javax.mail.internet.MimeBodyPart;
+import javax.mail.internet.MimeMultipart;
 import javax.mail.Authenticator;
 import javax.mail.Message;
 import javax.mail.MessagingException;
+import javax.mail.Multipart;
 import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+
 public class EmailUtility {
 	public static void sendFromGMail(String from, String pass, String[] to, String subject, String body) {
  
@@ -40,7 +44,14 @@ public class EmailUtility {
 	            }
 
 	            message.setSubject(subject);
-	            message.setText(body + "\n" + "1-dot-gestiondefacturas-isst.appspot.com");
+	            //message.setText(body + "\n" + "1-dot-gestiondefacturas-isst.appspot.com");
+	            Multipart mp = new MimeMultipart();
+
+	            MimeBodyPart htmlPart = new MimeBodyPart();
+	            htmlPart.setContent(body + "\n" + "<a href='http://1-dot-gestiondefacturas-isst.appspot.com'>Go to Website</a>", "text/html");
+	            mp.addBodyPart(htmlPart);
+	            message.setContent(mp);
+	            
 	            Transport transport = session.getTransport("smtp");
 	            transport.connect(host, from, pass);
 	            transport.sendMessage(message, message.getAllRecipients());
