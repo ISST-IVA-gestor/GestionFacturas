@@ -37,7 +37,7 @@ public class GoldServlet extends HttpServlet {
 		//dao.increaseRequests(10000, email);
 		dao.decreaseOneRequest(email);
 		req.getSession().setAttribute("email", email);
-		resp.sendRedirect("/chooseplan");
+		resp.sendRedirect("/dashboard");
 		
 	}
 	

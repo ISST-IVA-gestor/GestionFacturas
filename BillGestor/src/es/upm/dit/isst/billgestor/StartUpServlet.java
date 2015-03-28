@@ -40,7 +40,7 @@ public class StartUpServlet extends HttpServlet {
 		String email = session.getAttribute("user").toString();
 		dao.increaseRequests(100, email);
 		req.getSession().setAttribute("email", email);
-		resp.sendRedirect("/chooseplan");
+		resp.sendRedirect("/dashboard");
 		
 	}
 	

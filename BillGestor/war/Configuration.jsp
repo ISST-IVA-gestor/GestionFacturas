@@ -10,7 +10,7 @@
 
 <html>
 	<head>
-		<title>Choose Plan</title>
+		<title>Configuration</title>
 		<link rel="stylesheet" type="text/css" href="css/main.css" />
 		<meta charset="utf-8">
 	</head>
@@ -35,27 +35,25 @@
 				<li><a href="/dashboard" >DashBoard</a></li>
 				<li><a href="/chooseplan">Choose Plan</a></li>
 				<li><a href="">Reports</a></li>
-				<li class="active"><a href="">Configuration</a></li>
+				<li class="active"><a href="/configuration">Configuration</a></li>
 				<li><a href="">FAQ</a></li>
 			</ul>
 			</nav>
 		 </section>
 		<section class="row-main">
-	  <!--      <div class="lead container"> -->
-	        	<h1> Pricing plans </h1></br>
-	        	<h4> Please, select the best plan for you! </h4>
-	        	<div class="table-plan">
-				<section class="col-1-3">
-					<table class="plan">
-						<tr class="button-cell"><td><form action="" method="post" accept-charset="utf-8">
-								<input class="btn-table" type="submit" name="delete" id="startup" value="DELETE">
-					</form><td></tr>
-					</table>	
+	        	<div class="title-window">
+		        	<h2> Configuration </h2></br>
+	            </div>
+	            <div class="wrapper">
+		        	<h4> If you wish to close your account, click the next button: </h4>
+		        	<form action="" method="post" accept-charset="utf-8">
+								<input class="btn btn-default" type="submit" name="delete" id="delete" value="REMOVE ACCOUNT">
+					</form></br>
+					<p>*You will lose all your data, plans and remaining requests</p>
+					
+				</div>	
 				</section>
-			<!--	</div> -->
 			</div>
-		</section>
-		</div>
 		<footer class="primary-footer container group">
 
       		<h3>G. E. E. F. T.</h3><h4>All rights reserved &copy;</h4>

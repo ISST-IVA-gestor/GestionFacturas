@@ -36,7 +36,7 @@ public class PremiumServlet extends HttpServlet {
 		String email = session.getAttribute("user").toString();
 		dao.increaseRequests(1000, email);
 		req.getSession().setAttribute("email", email);
-		resp.sendRedirect("/chooseplan");
+		resp.sendRedirect("/dashboard");
 		
 	}
 	
