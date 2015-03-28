@@ -50,10 +50,7 @@
 		        	<h4><u>ACCOUNT INFORMATION:</u></h4>
 					<p>Domain: <c:out value="${domain}" /></p>
 					<p>Product: <c:out value="${product}" /></p>
-					<p>Current plan: <c:out value="${plan}" /></p>
-					<form action="/mail" method="post">
-						<input type="submit" value="Email to Toño, Sergio y Empresa"></button>
-					</form>			
+					<p>Current plan: <c:out value="${plan}" /></p>			
 				</div>
 				<div class="wrapper">
 					<h4><u>REPORTS CHART:</u></h4>

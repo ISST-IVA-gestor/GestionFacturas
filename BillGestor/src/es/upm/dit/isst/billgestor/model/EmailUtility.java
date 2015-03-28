@@ -40,8 +40,7 @@ public class EmailUtility {
 	            }
 
 	            message.setSubject(subject);
-	            message.setText(body);
-	            message.setContent("<a href='1-dot-gestiondefacturas-isst.appspot.com'>1-dot-gestiondefacturas-isst.appspot.com</a>", "text/html");
+	            message.setText(body + "\n" + "1-dot-gestiondefacturas-isst.appspot.com");
 	            Transport transport = session.getTransport("smtp");
 	            transport.connect(host, from, pass);
 	            transport.sendMessage(message, message.getAllRecipients());
