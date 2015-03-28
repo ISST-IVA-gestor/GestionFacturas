@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
 import es.upm.dit.isst.billgestor.model.Empresa;
+import es.upm.dit.isst.billgestor.model.Empresa.Plan;
 
 public class EmpresaDAOImpl implements EmpresaDAO {
 
@@ -83,11 +84,36 @@ public class EmpresaDAOImpl implements EmpresaDAO {
 		Empresa e = (Empresa) q.getResultList().get(0);	
 		em.getTransaction().begin();
 		e.setRemainingRequest(e.getRemainingRequest() + newRequests);
+		switch (newRequests){
+			case 100:
+				e.setPlan(Plan.STARTUP);
+				break;
+			case 1000:
+				e.setPlan(Plan.PREMIUM);
+				break;
+			case 10000:
+				e.setPlan(Plan.GOLD);
+				break;
+			default:
+				e.setPlan(Plan.FREE);
+				break;
+		}
 		em.getTransaction().commit();
 		
 	}
 	
-	public void decreaseOneRequest(String domain){
+	public void decreaseOneRequest(String email){
+		EntityManager em = EMFService.get().createEntityManager();
+		Query q = em.createQuery("select e from Empresa e where e.email = :em");
+		q.setParameter("em", email);
+		Empresa e = (Empresa) q.getResultList().get(0);	
+		em.getTransaction().begin();
+		if(e.getRemainingRequest()>0){
+			e.setRemainingRequest(e.getRemainingRequest()-30);
+		}if(e.getRemainingRequest()<=0){
+			e.setPlan(Plan.NO_PLAN);
+		}
+		em.getTransaction().commit();
 		
 	}
 

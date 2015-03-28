@@ -11,6 +11,8 @@ import javax.servlet.http.HttpSession;
 
 import es.upm.dit.isst.billgestor.dao.EmpresaDAO;
 import es.upm.dit.isst.billgestor.dao.EmpresaDAOImpl;
+import es.upm.dit.isst.billgestor.model.Empresa;
+import es.upm.dit.isst.billgestor.model.Empresa.Plan;
 
 
 

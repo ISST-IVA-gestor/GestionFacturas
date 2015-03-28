@@ -26,7 +26,7 @@ public class Empresa implements Serializable {
 	private int remaining_request; 
 	
 	public enum Plan{
-		FREE, STARTUP, PREMIUM, GOLD
+		FREE, STARTUP, PREMIUM, GOLD, NO_PLAN
 	}
 
 	private Plan plan;
