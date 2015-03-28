@@ -53,6 +53,7 @@ public class DashboardServlet extends HttpServlet {
 		req.getSession().setAttribute("product", product);
 		req.getSession().setAttribute("plan", plan);
 		req.getSession().setAttribute("nreq", nreq);
+		req.getSession().setAttribute("nreqplan", getRequestPlan(plan));
 		RequestDispatcher view = req.getRequestDispatcher("Dashboard.jsp");
 		try {
 			view.forward(req, resp);
@@ -67,5 +68,19 @@ public class DashboardServlet extends HttpServlet {
 			return "";
 		}
 		return s;
+	}
+	
+	private int getRequestPlan(String plan){
+		if ("FREE".equals(plan )) {
+			return 50;
+		} else if ("STARTUP".equals(plan )) {
+			return 100;
+		} else if ("PREMIUM".equals(plan)) {
+			return 1000;
+		} else if ("GOLD".equals(plan )) {
+			return 10000;
+		} else {
+			return 1;
+		}
 	}
 }

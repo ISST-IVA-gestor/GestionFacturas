@@ -394,19 +394,25 @@ nav.menu > ul > li > a {
     background-color: #77a198; 
     cursor: pointer;
   }
-  .article1{
-  text-align: left;
+.col-50{
+  width: 49%;
+  display: inline-block;
   float:left;
+}
+ 
+ .wrapper{
+    padding: 5px 0px 40px 30px;
+ }
+ 
+ #chart_div{
+  margin-left: 15%;
+  margin-bottom: 30px;
+  margin-top: 20px;
   }
-   .article2{
-   overflow:hidden;
-   
-  }
-   .article3{
-   overflow:hidden;
-  }
-  #chart_div{
-  margin-left: 25%;
+  
+  span {
+  font-weight: bold;
+  
   }
 
   /*
@@ -474,4 +480,21 @@ nav.menu > ul > li > a {
 
 .title-window{
   padding-left: 50px;
+  width: 100%;
+}
+
+
+
+  /*
+  ========================================
+  Configuration
+  ========================================
+*/
+
+.warning-message{
+
+}
+
+.remove-account{
+
 }

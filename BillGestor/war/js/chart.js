@@ -12,13 +12,18 @@
 
         // Create the data table.
         var peticiones = document.getElementById("nreq");
+        var peticionesPlan = document.getElementById("nreqplan");
         var nreq = parseInt(peticiones.textContent || peticiones.innerText);
+        var nreqplan = parseInt(peticionesPlan.textContent || peticionesPlan.innerText);
+        if(nreqplan < nreq){
+        	nreqplan = nreq;
+        }
     	var data = new google.visualization.DataTable();
         data.addColumn('string', 'Info');
         data.addColumn('number', 'Number of Requests');
         data.addRows([
           ['Requests Left', nreq],
-          ['Requests Used', 50-nreq],
+          ['Requests Used', nreqplan-nreq],
         ]);
 
         // Set chart options
@@ -26,7 +31,9 @@
                        'height':175,
                        'backgroundColor': '#DFE1F0',
                        'chartArea':{'width':'100%','height':'95%'},
-                       'legend':{'position':'left'}};
+                       'legend':{'position':'right'},
+                       'colors': ['#293f50', '#f6f1d3'],
+                       'is3D': true};
 
         // Instantiate and draw our chart, passing in some options.
         var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
