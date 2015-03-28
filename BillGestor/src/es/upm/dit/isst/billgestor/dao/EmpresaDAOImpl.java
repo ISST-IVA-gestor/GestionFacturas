@@ -113,9 +113,10 @@ public class EmpresaDAOImpl implements EmpresaDAO {
 		Empresa e = (Empresa) q.getResultList().get(0);	
 		em.getTransaction().begin();
 		if(e.getRemainingRequest()>0){
-			e.setRemainingRequest(e.getRemainingRequest()-40);
+			e.setRemainingRequest(e.getRemainingRequest()-30);
 		}if(e.getRemainingRequest()<=0){
 			e.setPlan(Plan.NO_PLAN);
+			e.setRemainingRequest(1);
 		}
 		if(e.getRemainingRequest() == 10){
 			RECIPIENT1 = e.getEmail();
