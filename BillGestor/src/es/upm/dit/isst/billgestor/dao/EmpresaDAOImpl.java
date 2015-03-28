@@ -5,13 +5,17 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
+import es.upm.dit.isst.billgestor.model.EmailUtility;
 import es.upm.dit.isst.billgestor.model.Empresa;
 import es.upm.dit.isst.billgestor.model.Empresa.Plan;
 
 public class EmpresaDAOImpl implements EmpresaDAO {
 
 	private static EmpresaDAOImpl instance;
-
+	private static String USER_NAME = "gestiondefacturas.isst";  // GMail user name (just the part before "@gmail.com")
+    private static String PASSWORD = "gestiondefacturas"; // GMail password
+    private static String RECIPIENT1 = "";
+	    
 	public EmpresaDAOImpl() {
 
 	}
@@ -109,9 +113,34 @@ public class EmpresaDAOImpl implements EmpresaDAO {
 		Empresa e = (Empresa) q.getResultList().get(0);	
 		em.getTransaction().begin();
 		if(e.getRemainingRequest()>0){
-			e.setRemainingRequest(e.getRemainingRequest()-30);
+			e.setRemainingRequest(e.getRemainingRequest()-40);
 		}if(e.getRemainingRequest()<=0){
 			e.setPlan(Plan.NO_PLAN);
+		}
+		if(e.getRemainingRequest() == 10){
+			RECIPIENT1 = e.getEmail();
+			String from = USER_NAME;
+	        String pass = PASSWORD;
+	        String[] to = { RECIPIENT1 }; // list of recipient email addresses
+	        String subject = "GEEFT: Request Limit Reached. 10 Requests Left";
+	        String body = "We inform you are about to run out of requests available. Please log into your user account and choose a new package plan. "
+	        		+ "Thank you.";
+
+	        EmailUtility.sendFromGMail(from, pass, to, subject, body);
+			System.out.println("Correo enviado a:"+ RECIPIENT1);
+			
+		}
+		if(e.getRemainingRequest() == 0){
+			RECIPIENT1 = e.getEmail();
+			String from = USER_NAME;
+	        String pass = PASSWORD;
+	        String[] to = { RECIPIENT1 }; // list of recipient email addresses
+	        String subject = "GEEFT: Request Limit Reached. 0 Requests Left";
+	        String body = "We inform you have run out of requests available. Please log into your user account and choose a new package plan. "
+	        		+ "Thank you.";
+
+	        EmailUtility.sendFromGMail(from, pass, to, subject, body);
+			System.out.println("Correo enviado a:"+ RECIPIENT1 );
 		}
 		em.getTransaction().commit();
 		
