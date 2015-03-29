@@ -34,8 +34,8 @@ public class GoldServlet extends HttpServlet {
 		EmpresaDAO dao = EmpresaDAOImpl.getInstance();
 		HttpSession session = req.getSession();
 		String email = session.getAttribute("user").toString();
-		//dao.increaseRequests(10000, email);
-		dao.decreaseOneRequest(email);
+		dao.increaseRequests(10000, email);
+		//dao.decreaseOneRequest(email);
 		req.getSession().setAttribute("email", email);
 		resp.sendRedirect("/dashboard");
 		
