@@ -59,7 +59,32 @@ public class ChoosePlanServlet extends HttpServlet {
 	
 	public void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException {
+		HttpSession session = req.getSession();
 		
+		if(session.getAttribute("user") == null ){
+			resp.sendRedirect("/");
+			return;
+		}
+		
+		String email = session.getAttribute("user").toString();
+		EmpresaDAO dao = EmpresaDAOImpl.getInstance();
+		Empresa e = dao.getEnterprise(email);
+		
+		if(req.getParameter("startup")!=null){
+			dao.increaseRequests(100, email);
+			resp.sendRedirect("/dashboard");
+			return;
+		}
+		if(req.getParameter("premium")!=null){
+			dao.increaseRequests(1000, email);
+			resp.sendRedirect("/dashboard");
+			return;
+		}
+		if(req.getParameter("gold")!=null){
+			dao.increaseRequests(10000, email);
+			resp.sendRedirect("/dashboard");
+			return;
+		}
 		
 		
 		

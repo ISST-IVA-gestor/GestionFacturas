@@ -65,7 +65,7 @@ public class ConfigurationServlet extends HttpServlet {
 	
 	public void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException {
-		HttpSession session = req.getSession();
+			HttpSession session = req.getSession();
 		
 			if(session.getAttribute("user") == null ){
 				resp.sendRedirect("/");

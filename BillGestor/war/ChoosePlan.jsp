@@ -62,8 +62,8 @@
 					<!-- 	<form action="" method="post" accept-charset="utf-8">
 							<input class="btn-table" type="submit" name="startup" id="startup" value="BUY NOW">
 						</form> -->
-						<form action="/startup" method="Post" onsubmit="return validate(this);">
-   							 <input class="btn-table" type="submit" name="email" id="email" value="BUY NOW" >
+						<form action="" method="Post" onsubmit="return validate(this);">
+   							 <input class="btn-table" type="submit" name="startup" id="startup" value="BUY NOW" >
 						</form>
 					<td></tr>
 					</table>	
@@ -74,8 +74,8 @@
 						<tr class="request-cell"><td>1.000 requests</td></tr>
 						<tr class="price-cell"><td>59,95 €</td></tr>
 						<tr class="button-cell"><td>
-						<form action="/premium" method="Post" onsubmit="return validate(this);">
-   							 <input class="btn-table" type="submit" name="email" id="email" value="BUY NOW" >
+						<form action="" method="Post" onsubmit="return validate(this);">
+   							 <input class="btn-table" type="submit" name="premium" id="premium" value="BUY NOW" >
 						</form>
 					<td></tr>
 					</table>
@@ -86,8 +86,8 @@
 						<tr class="request-cell"><td>10.000 requests</td></tr>
 						<tr class="price-cell"><td>299,95 €</td></tr>
 						<tr class="button-cell"><td>
-						<form action="/gold" method="Post" onsubmit="return validate(this);">
-   							 <input class="btn-table" type="submit" name="email" id="email" value="BUY NOW" >
+						<form action="" method="Post" onsubmit="return validate(this);">
+   							 <input class="btn-table" type="submit" name="gold" id="gold" value="BUY NOW" >
 						</form>
 					<td></tr>
 					</table>

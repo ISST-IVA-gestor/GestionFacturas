@@ -31,18 +31,6 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<servlet-name>Configuration</servlet-name>
 		<servlet-class>es.upm.dit.isst.billgestor.ConfigurationServlet</servlet-class>
 	</servlet>
-	<servlet>
-		<servlet-name>StartUp</servlet-name>
-		<servlet-class>es.upm.dit.isst.billgestor.StartUpServlet</servlet-class>
-	</servlet>
-	<servlet>
-		<servlet-name>Premium</servlet-name>
-		<servlet-class>es.upm.dit.isst.billgestor.PremiumServlet</servlet-class>
-	</servlet>
-	<servlet>
-		<servlet-name>Gold</servlet-name>
-		<servlet-class>es.upm.dit.isst.billgestor.GoldServlet</servlet-class>
-	</servlet>
 	<servlet-mapping>
 		<servlet-name>Configuration</servlet-name>
 		<url-pattern>/configuration</url-pattern>
@@ -69,18 +57,6 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	</servlet-mapping>	<servlet-mapping>
 		<servlet-name>Email</servlet-name>
 		<url-pattern>/mail</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>StartUp</servlet-name>
-		<url-pattern>/startup</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>Premium</servlet-name>
-		<url-pattern>/premium</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>Gold</servlet-name>
-		<url-pattern>/gold</url-pattern>
 	</servlet-mapping>
 	<welcome-file-list>
 		<welcome-file>Login.jsp</welcome-file>
