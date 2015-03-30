@@ -45,6 +45,26 @@
 		        	<h2> Configuration </h2></br>
 	            </div>
 	            <div class="wrapper">
+	            <form action="" method="post" accept-charset="utf-8">
+	            	<h4>Select when you want to be warned about remaining requests: 
+	            	<select type="text" name="product" id="product" required>
+			              	<option value="one" selected>1%</option>
+			                <option value="five">5%</option>
+			                <option value="ten">10%</option>
+			                <option value="twentyfive">25%</option>
+			                <option value="fifty">50%</option>
+			         </select>
+			         </h4>
+			         <p>You actually have <c:out value="${nreq}" /> remaining requests.</br>
+			         With 1% you will be warned at: <c:out value="${nreqwar}" /> remaining requests.</br>
+			         With 5% you will be warned at: <c:out value="${nreqwarr}" /> remaining requests.</br>
+			         With 10% you will be warned at: <c:out value="${nreqwarrr}" /> remaining requests.</br>
+			         With 25% you will be warned at: <c:out value="${nreqwarrrr}" /> remaining requests.</br>
+			         With 50% you will be warned at: <c:out value="${nreqwarrrrr}" /> remaining requests.</p>
+			         
+								<input class="btn btn-default" type="submit" name="subm" id="subm" value="SUBMIT">
+					</form></br>
+
 		        	<h4> If you wish to close your account, click the next button: </h4>
 		        	<form action="" method="post" accept-charset="utf-8">
 								<input class="btn btn-default" type="submit" name="delete" id="delete" value="REMOVE ACCOUNT">

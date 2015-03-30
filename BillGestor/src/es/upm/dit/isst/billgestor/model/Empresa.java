@@ -23,6 +23,7 @@ public class Empresa implements Serializable {
 	private String domain;
 	private String password;
 	private String product;
+	private int warning_request;
 	private int remaining_request; 
 	
 	public enum Plan{
@@ -38,6 +39,7 @@ public class Empresa implements Serializable {
 		this.password = password;
 		this.product = product;
 		remaining_request = 50; // Número de peticiones iniciales en el plan free.
+		warning_request = 10;
 		plan = Plan.FREE; // Empezamos siempre con el plan free.
 	}
 
@@ -91,6 +93,14 @@ public class Empresa implements Serializable {
 
 	public void setRemainingRequest(int remaining_request) {
 		this.remaining_request = remaining_request;
+	}
+	
+	public int getWarningRequest() {
+		return warning_request;
+	}
+
+	public void setWarningRequest(int warning_request) {
+		this.warning_request = warning_request;
 	}
 
 	public Plan getPlan() {

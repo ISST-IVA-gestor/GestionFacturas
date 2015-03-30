@@ -20,6 +20,8 @@ public interface EmpresaDAO {
 	
 	public void decreaseOneRequest(String domain);
 	
+	public void setWarningRequest(int warning_request, String email);
+	
 	public boolean correctLogin(String email, String password);
 	// public List<String> getUsers();
 

@@ -50,7 +50,8 @@
 		        	<h4><u>ACCOUNT INFORMATION:</u></h4>
 					<p>Domain: <c:out value="${domain}" /></p>
 					<p>Product: <c:out value="${product}" /></p>
-					<p>Current plan: <c:out value="${plan}" /></p>			
+					<p>Current plan: <c:out value="${plan}" /></p>	
+					<p>Warning email at: <c:out value="${warning}" /> remaining requests.</p>			
 				</div>
 				<div class="wrapper">
 					<h4><u>REPORTS CHART:</u></h4>

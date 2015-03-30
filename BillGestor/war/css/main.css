@@ -10,6 +10,9 @@ header, menu, nav, section {
   font: inherit;
   vertical-align: baseline;
 }
+select {
+  font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
 
 article, footer, header,
 menu, nav, section {

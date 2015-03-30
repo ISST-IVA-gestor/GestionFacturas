@@ -106,6 +106,16 @@ public class EmpresaDAOImpl implements EmpresaDAO {
 		
 	}
 	
+	public void setWarningRequest(int warning_request, String email){
+		EntityManager em = EMFService.get().createEntityManager();
+		Query q = em.createQuery("select e from Empresa e where e.email = :em");
+		q.setParameter("em", email);
+		Empresa e = (Empresa) q.getResultList().get(0);	
+		em.getTransaction().begin();
+		e.setWarningRequest(warning_request);
+		em.getTransaction().commit();
+	}
+	
 	public void decreaseOneRequest(String email){
 		EntityManager em = EMFService.get().createEntityManager();
 		Query q = em.createQuery("select e from Empresa e where e.email = :em");
@@ -118,12 +128,12 @@ public class EmpresaDAOImpl implements EmpresaDAO {
 			e.setPlan(Plan.NO_PLAN);
 			e.setRemainingRequest(1);
 		}
-		if(e.getRemainingRequest() == 10){
+		if(e.getRemainingRequest() == e.getWarningRequest()){
 			RECIPIENT1 = e.getEmail();
 			String from = USER_NAME;
 	        String pass = PASSWORD;
 	        String[] to = { RECIPIENT1 }; // list of recipient email addresses
-	        String subject = "GEEFT: Request Limit Reached. 10 Requests Left";
+	        String subject = "GEEFT: Request Limit Reached. " + e.getRemainingRequest() + " Requests Left";
 	        String body = "We inform you are about to run out of requests available. Please log into your user account and choose a new package plan. "
 	        		+ "Thank you.";
 
