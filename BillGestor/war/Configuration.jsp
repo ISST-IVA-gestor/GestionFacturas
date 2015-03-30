@@ -32,11 +32,11 @@
 			<section class="row-nav">
 			<nav class="menu">
 			<ul>
-				<li><a href="/dashboard" >DashBoard</a></li>
-				<li><a href="/chooseplan">Choose Plan</a></li>
-				<li><a href="">Reports</a></li>
-				<li class="active"><a href="/configuration">Configuration</a></li>
-				<li><a href="">FAQ</a></li>
+				<li><img src="images/dashboard.svg"><a href="/dashboard"><span>DashBoard</span></a></li>
+				<li><img src="images/chooseplan.svg"><a href="/chooseplan"><span>Choose Plan</span></a></li>
+				<li><img src="images/reports.svg"><a href=""><span>Reports</a></span></li>
+				<li class="active"><img src="images/configuration.svg"><a href="/configuration"><span>Configuration</span></a></li>
+				<li><img src="images/faq.svg"><a href=""><span>FAQ</span></a></li>
 			</ul>
 			</nav>
 		 </section>
