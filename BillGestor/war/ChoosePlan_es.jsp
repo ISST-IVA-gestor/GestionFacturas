@@ -28,7 +28,7 @@
 	      	</div>
 	      	<div class="logout-contanier">
 	        	<h3>Gestión de facturas</h3>
-	        	<img src="images/bandera_en.gif" ><a href="ChoosePlan.jsp"><span>English</span></a>
+	        	<img src="images/bandera_en.gif" ><a href="/chooseplan"><span>English</span></a>
 	            <a href="?logout=yes" class="logout-text">Cerrar sesión</a>
 	        	<img src="images/logout.png" class="logout">
 	        </div>
