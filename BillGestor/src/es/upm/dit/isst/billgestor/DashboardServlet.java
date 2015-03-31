@@ -56,12 +56,30 @@ public class DashboardServlet extends HttpServlet {
 		req.getSession().setAttribute("nreq", nreq);
 		req.getSession().setAttribute("warning", warning);
 		req.getSession().setAttribute("nreqplan", getRequestPlan(plan));
-		RequestDispatcher view = req.getRequestDispatcher("Dashboard.jsp");
-		try {
-			view.forward(req, resp);
-		} catch (ServletException ex) {
-			// TODO Auto-generated catch block
-			ex.printStackTrace();
+		
+		
+		String language = req.getParameter("l");
+		
+	    if(language!=null){
+			if (language.equals("es")){
+				RequestDispatcher view = req.getRequestDispatcher("Dashboard_es.jsp");
+				try {
+					view.forward(req, resp);
+				} catch (ServletException ex) {
+					// TODO Auto-generated catch block
+					ex.printStackTrace();
+				}
+			}
+	    }
+		
+		else{
+			RequestDispatcher view = req.getRequestDispatcher("Dashboard.jsp");
+			try {
+				view.forward(req, resp);
+			} catch (ServletException ex) {
+				// TODO Auto-generated catch block
+				ex.printStackTrace();
+			}
 		}
 	}
 

@@ -48,12 +48,29 @@ public class ChoosePlanServlet extends HttpServlet {
 		//String email = session.getAttribute("user").toString();
 		req.getSession().setAttribute("email", email);
 		
-		RequestDispatcher view = req.getRequestDispatcher("ChoosePlan.jsp");
-		try {
-			view.forward(req, resp);
-		} catch (ServletException ex) {
-			// TODO Auto-generated catch block
-			ex.printStackTrace();
+		String language = req.getParameter("l");
+	
+		
+		 if(language!=null){	
+			 if (language.equals("es")){
+			
+				RequestDispatcher view = req.getRequestDispatcher("ChoosePlan_es.jsp");
+				try {
+					view.forward(req, resp);
+				} catch (ServletException ex) {
+					// TODO Auto-generated catch block
+					ex.printStackTrace();
+				}
+			}
+		}else {
+			
+			RequestDispatcher view = req.getRequestDispatcher("ChoosePlan.jsp");
+			try {
+				view.forward(req, resp);
+			} catch (ServletException ex) {
+				// TODO Auto-generated catch block
+				ex.printStackTrace();
+			}
 		}
 	}
 	
@@ -69,22 +86,46 @@ public class ChoosePlanServlet extends HttpServlet {
 		String email = session.getAttribute("user").toString();
 		EmpresaDAO dao = EmpresaDAOImpl.getInstance();
 		Empresa e = dao.getEnterprise(email);
+		String language = req.getParameter("l");
 		
-		if(req.getParameter("startup")!=null){
-			dao.increaseRequests(100, email);
-			resp.sendRedirect("/dashboard");
-			return;
+		
+		if (language.equals("es")){
+			if(req.getParameter("startup")!=null){
+				dao.increaseRequests(100, email);
+				resp.sendRedirect("/dashboard?l=es");
+				return;
+			}
+			if(req.getParameter("premium")!=null){
+				dao.increaseRequests(1000, email);
+				resp.sendRedirect("/dashboard?l=es");
+				return;
+			}
+			if(req.getParameter("gold")!=null){
+				dao.increaseRequests(10000, email);
+				resp.sendRedirect("/dashboard?l=es");
+				return;
+			}
+		} else {
+			if(req.getParameter("startup")!=null){
+				dao.increaseRequests(100, email);
+				resp.sendRedirect("/dashboard");
+				return;
+			}
+			if(req.getParameter("premium")!=null){
+				dao.increaseRequests(1000, email);
+				resp.sendRedirect("/dashboard");
+				return;
+			}
+			if(req.getParameter("gold")!=null){
+				dao.increaseRequests(10000, email);
+				resp.sendRedirect("/dashboard");
+				return;
+			}
 		}
-		if(req.getParameter("premium")!=null){
-			dao.increaseRequests(1000, email);
-			resp.sendRedirect("/dashboard");
-			return;
-		}
-		if(req.getParameter("gold")!=null){
-			dao.increaseRequests(10000, email);
-			resp.sendRedirect("/dashboard");
-			return;
-		}
+		
+		
+		
+		
 		
 		
 		

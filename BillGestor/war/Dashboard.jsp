@@ -24,6 +24,7 @@
 	      	</div>
 	      	<div class="logout-contanier">
 	        	<h3>Electronic Invoice Management</h3>
+	        	<img src="images/bandera_es.gif" ><a href="Dashboard_es.jsp"><span>Español</span></a>
 	            <a href="?logout=yes" class="logout-text">Log out</a>
 	        	<img src="images/logout.png" class="logout">
 	        </div>

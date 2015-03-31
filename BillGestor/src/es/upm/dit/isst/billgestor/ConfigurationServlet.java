@@ -54,12 +54,28 @@ public class ConfigurationServlet extends HttpServlet {
 		req.getSession().setAttribute("nreqwarrrrr", war);
 		
 		
-		RequestDispatcher view = req.getRequestDispatcher("Configuration.jsp");
-		try {
-			view.forward(req, resp);
-		} catch (ServletException ex) {
-			// TODO Auto-generated catch block
-			ex.printStackTrace();
+		String language = req.getParameter("l");
+		//System.out.println(language);
+		 if(language!=null){
+			if (language.equals("es")){
+				//System.out.println("entro");
+				RequestDispatcher view = req.getRequestDispatcher("Configuration_es.jsp");
+				try {
+					view.forward(req, resp);
+				} catch (ServletException ex) {
+					// TODO Auto-generated catch block
+					ex.printStackTrace();
+				}
+			}
+		} else {
+			
+			RequestDispatcher view = req.getRequestDispatcher("Configuration.jsp");
+			try {
+				view.forward(req, resp);
+			} catch (ServletException ex) {
+				// TODO Auto-generated catch block
+				ex.printStackTrace();
+			}
 		}
 	}
 	
@@ -75,7 +91,7 @@ public class ConfigurationServlet extends HttpServlet {
 			String email = session.getAttribute("user").toString();
 			EmpresaDAO dao = EmpresaDAOImpl.getInstance();
 			Empresa e = dao.getEnterprise(email);
-			
+			String language = req.getParameter("l");
 
 			if(req.getParameter("subm")!=null){
 				int remaing_request= e.getRemainingRequest();
@@ -88,7 +104,11 @@ public class ConfigurationServlet extends HttpServlet {
 				if(req.getParameter("product").equals("fifty")) percent = 50;
 				warning_request = (int)(Math.ceil(remaing_request*percent/100));
 				dao.setWarningRequest(warning_request, email);
-				resp.sendRedirect("/dashboard");
+				if (language.equals("es")){
+					resp.sendRedirect("/dashboard?l=es");
+				}else{
+					resp.sendRedirect("/dashboard");
+				}
 				return;
 			}
 			
@@ -99,12 +119,24 @@ public class ConfigurationServlet extends HttpServlet {
 				return;
 			}
 			
-			RequestDispatcher view = req.getRequestDispatcher("Configuration.jsp");
-			try {
-				view.forward(req, resp);
-			} catch (ServletException ex) {
-				// TODO Auto-generated catch block
-				ex.printStackTrace();
+			if (language.equals("es")){
+				//System.out.println("entro");
+				RequestDispatcher view = req.getRequestDispatcher("Configuration_es.jsp");
+				try {
+					view.forward(req, resp);
+				} catch (ServletException ex) {
+					// TODO Auto-generated catch block
+					ex.printStackTrace();
+				}
+			} else {
+				
+				RequestDispatcher view = req.getRequestDispatcher("Configuration.jsp");
+				try {
+					view.forward(req, resp);
+				} catch (ServletException ex) {
+					// TODO Auto-generated catch block
+					ex.printStackTrace();
+				}
 			}
 		
 		
